@@ -1,18 +1,20 @@
+plugins {
+	id 'org.springframework.boot' version '2.4.0' apply false
+}
+
 allprojects {
-	apply plugin: 'java'
-
 	group = 'dev.mostlycloudy'
-	sourceCompatibility = '11'
 	version = '1.0-SNAPSHOT'
-
-	repositories {
-		mavenCentral()
-	}
 }
 
 subprojects {
-	dependencies {
-		implementation platform('org.springframework.boot:spring-boot-dependencies:2.4.0')
+	apply plugin: 'io.spring.dependency-management'
+	apply plugin: 'java'
+
+	sourceCompatibility = '11'
+
+	repositories {
+		mavenCentral()
 	}
 
 	test {
