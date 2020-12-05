@@ -1,38 +1,21 @@
-plugins {
-	id 'org.springframework.boot' version '2.4.0'
-	id 'io.spring.dependency-management' version '1.0.10.RELEASE'
-	id 'java'
-}
+allprojects {
+	apply plugin: 'java'
 
-group = 'dev.mostlycloudy'
-version = '1.0-SNAPSHOT'
-sourceCompatibility = '11'
+	group = 'dev.mostlycloudy'
+	sourceCompatibility = '11'
+	version = '1.0-SNAPSHOT'
 
-configurations {
-	compileOnly {
-		extendsFrom annotationProcessor
+	repositories {
+		mavenCentral()
 	}
 }
 
-repositories {
-	mavenCentral()
-}
+subprojects {
+	dependencies {
+		implementation platform('org.springframework.boot:spring-boot-dependencies:2.4.0')
+	}
 
-dependencies {
-	annotationProcessor 'org.projectlombok:lombok'
-	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
-
-	compileOnly 'org.projectlombok:lombok'
-
-	developmentOnly 'org.springframework.boot:spring-boot-devtools'
-
-	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
-	implementation 'org.springframework.boot:spring-boot-starter-webflux'
-
-	testImplementation 'io.projectreactor:reactor-test'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-}
-
-test {
-	useJUnitPlatform()
+	test {
+		useJUnitPlatform()
+	}
 }

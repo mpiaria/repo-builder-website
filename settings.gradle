@@ -1,4 +1,3 @@
-rootProject.name = 'repo-builder-website'
 include 'application'
 include 'infrastructure'
-
+rootProject.name = 'repo-builder-website'
