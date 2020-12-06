@@ -1,5 +1,11 @@
 plugins {
+    id "application"
+}
+
+application {
+    mainClass.set("dev.mostlycloudy.repobuilder.infrastructure.CdkAppApp")
 }
 
 dependencies {
+    implementation "software.amazon.awscdk:core:$awsCdkVersion"
 }

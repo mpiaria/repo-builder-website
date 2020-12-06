@@ -1,17 +1,21 @@
 plugins {
-	id 'org.springframework.boot' version '2.4.0' apply false
+	id "org.springframework.boot" version "2.4.0" apply false
 }
 
 allprojects {
-	group = 'dev.mostlycloudy'
-	version = '1.0-SNAPSHOT'
+	group = "dev.mostlycloudy"
+	version = "1.0-SNAPSHOT"
+}
+
+ext {
+	awsCdkVersion = "1.76.0"
 }
 
 subprojects {
-	apply plugin: 'io.spring.dependency-management'
-	apply plugin: 'java'
+	apply plugin: "io.spring.dependency-management"
+	apply plugin: "java"
 
-	sourceCompatibility = '11'
+	sourceCompatibility = "11"
 
 	repositories {
 		mavenCentral()
