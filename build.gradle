@@ -7,6 +7,10 @@ allprojects {
 	version = '1.0-SNAPSHOT'
 }
 
+ext {
+	awsCdkVersion = '1.76.0'
+}
+
 subprojects {
 	apply plugin: 'io.spring.dependency-management'
 	apply plugin: 'java'
