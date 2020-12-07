@@ -15,7 +15,7 @@ public class RepoBuilderWebsiteStack extends Stack {
         super(scope, id, props);
 
         // The code that defines your stack goes here
-        Repository.Builder.create(this, id + "container-repository")
+        Repository.Builder.create(this, id + "-container-repository")
                 .repositoryName("repo-builder-website")
                 .removalPolicy(RemovalPolicy.DESTROY)
                 .build();
