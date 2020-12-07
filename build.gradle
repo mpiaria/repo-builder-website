@@ -1,5 +1,7 @@
+import org.springframework.boot.gradle.plugin.SpringBootPlugin
+
 plugins {
-	id "org.springframework.boot" version "2.4.0" apply false
+	id "org.springframework.boot" version "$springBootVersion" apply false
 }
 
 allprojects {
@@ -7,13 +9,15 @@ allprojects {
 	version = "1.0-SNAPSHOT"
 }
 
-ext {
-	awsCdkVersion = "1.76.0"
-}
-
 subprojects {
 	apply plugin: "io.spring.dependency-management"
 	apply plugin: "java"
+
+	dependencyManagement {
+		imports {
+			mavenBom SpringBootPlugin.BOM_COORDINATES
+		}
+	}
 
 	sourceCompatibility = "11"
 

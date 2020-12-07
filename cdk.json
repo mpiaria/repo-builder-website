@@ -1,5 +1,5 @@
 {
-  "app": "./gradlew :infrastructure:run",
+  "app": "./gradlew clean :infrastructure:run",
   "context": {
     "@aws-cdk/core:enableStackNameDuplicates": "true",
     "aws-cdk:enableDiffNoFail": "true",

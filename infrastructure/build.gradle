@@ -7,5 +7,6 @@ application {
 }
 
 dependencies {
+    implementation project(":application")
     implementation "software.amazon.awscdk:core:$awsCdkVersion"
 }
