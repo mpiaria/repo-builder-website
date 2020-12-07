@@ -1,4 +1,4 @@
-package com.myorg;
+package dev.mostlycloudy.repobuilder.infrastructure;
 
 import software.amazon.awscdk.core.Construct;
 import software.amazon.awscdk.core.Stack;

@@ -1,8 +1,6 @@
-package com.myorg;
+package dev.mostlycloudy.repobuilder.infrastructure;
 
 import software.amazon.awscdk.core.App;
-
-import java.util.Arrays;
 
 public class RepoBuilderWebsiteApp {
     public static void main(final String[] args) {

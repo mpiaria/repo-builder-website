@@ -1,4 +1,4 @@
-package com.myorg;
+package dev.mostlycloudy.repobuilder.infrastructure;
 
 import software.amazon.awscdk.core.App;
 import com.fasterxml.jackson.databind.JsonNode;
