@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <parent>
-        <artifactId>repo-builder-website</artifactId>
         <groupId>dev.mostlycloudy</groupId>
+        <artifactId>repo-builder-website</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
