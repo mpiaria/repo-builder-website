@@ -1,5 +1,5 @@
 {
-  "app": "./gradlew :infrastructure:run",
+  "app": "mvn --errors --projects infrastructure --quiet exec:java",
   "context": {
     "@aws-cdk/core:enableStackNameDuplicates": "true",
     "aws-cdk:enableDiffNoFail": "true",

@@ -1,1 +1,4 @@
-
+logging:
+  level:
+    dev.mostlycloudy: debug
+    root: info
