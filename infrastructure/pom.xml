@@ -30,7 +30,7 @@
         </dependency>
         <dependency>
             <groupId>software.amazon.awscdk</groupId>
-            <artifactId>core</artifactId>
+            <artifactId>ecr</artifactId>
             <version>${cdk.version}</version>
         </dependency>
     </dependencies>
