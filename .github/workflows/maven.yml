@@ -23,6 +23,14 @@ jobs:
       with:
         java-version: 11
 
+    - name: Setup Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: '14'
+
+    - name: Install AWS CDK
+      run: npm install -g aws-cdk
+
     - name: Build with Maven
       run: mvn --batch-mode package --file pom.xml
 
@@ -33,7 +41,20 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: us-east-2
 
-    - name: Build and push Docker image
+    - name: Bootstrap CDK
+      run: cdk bootstrap aws://087696264040/us-east-2
+
+    - name: CDK deploy
+      run: cdk deploy
+
+    - name: Login to Amazon ECR
+      uses: aws-actions/amazon-ecr-login@v1
+
+    - name: Build, tag, and push image to Amazon ECR
+      env:
+        ECR_REGISTRY: 087696264040.dkr.ecr.us-east-2.amazonaws.com
+        ECR_REPOSITORY: repo-builder-website
+        IMAGE_TAG: 1.0
       run: |
-              docker build --tag 087696264040.dkr.ecr.us-east-2.amazonaws.com/repo-builder-website/repo-builder-website:1.0 .
-              docker push 087696264040.dkr.ecr.us-east-2.amazonaws.com/repo-builder-website/repo-builder-website:1.0
+        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
+        docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
